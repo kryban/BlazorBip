@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BrpBipApi.Mappers;
+using BrpBipApi.Types;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +28,7 @@ namespace BrpBipApi.Controllers
             return new List<string> { "default" };
         }
 
-        /*
+        
         // GET: api/IngeschrevenPersoon/5
         //[HttpGet("{id}", Name = "GetNatuurlijkPersoon")]
         [HttpGet("/api/ingeschrevenpersoon/{id}")]
@@ -36,13 +38,13 @@ namespace BrpBipApi.Controllers
             Persoon retVal;
             IngeschrevenPersoonHal brpResult;
 
-            brpResult = bipClient.IngeschrevenNatuurlijkPersoonAsync(id, null, null, null).Result;
+            brpResult = bipClient.IngeschrevenNatuurlijkPersoonAsync(id, null, null).Result;
 
             retVal = new Map_IngeschrevenPersoonHal_to_Persoon().Map(brpResult);
 
             return retVal;
         }
-        */
+
         /*
 
 
