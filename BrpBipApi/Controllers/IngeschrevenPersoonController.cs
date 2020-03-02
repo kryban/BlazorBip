@@ -21,7 +21,7 @@ namespace BrpBipApi.Controllers
         }
 
         // GET: api/BevragingIngeschrevenPersoon
-        [HttpGet]
+        [HttpGet("/api/ingeschrevenpersoon")]
         public IEnumerable<string> Get()
         {
             //throw new NotImplementedException();
