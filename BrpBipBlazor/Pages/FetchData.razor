@@ -1,13 +1,15 @@
 ﻿@page "/fetchdata"
 
 @using BrpBipBlazor.Data
+@using BrpBipApi.Types;
 @inject WeatherForecastService ForecastService
+@inject BipService bipService;
 
-<h1>Weather forecast</h1>
+<h1>Bevraging ingeschreven personen (Bip)</h1>
 
 <p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
+@if (persoon == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -16,31 +18,52 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>@nameof(persoon.Aanhef)</th>
+                <th>@nameof(persoon.Aanschrijfwijze)</th>
+                <th>@nameof(persoon.Burgerservicenummer)</th>
+                <th>@nameof(persoon.DatumGeboorte)</th>
+                <th>@nameof(persoon.DatumGeboorteBevolking)</th>
+                <th>@nameof(persoon.DatumOverlijden)</th>
+                <th>@nameof(persoon.Geboorteland)</th>
+                <th>@nameof(persoon.Geheim)</th>
+                <th>@nameof(persoon.Geslacht)</th>
+                <th>@nameof(persoon.Naam)</th>
+                <th>@nameof(persoon.Nationaliteit1)</th>
+                <th>@nameof(persoon.Nationaliteit2)</th>
+                <th>@nameof(persoon.Voorletters)</th>
+                <th>@nameof(persoon.Voornamen)</th>
+                <th>@nameof(persoon.Voorvoegsels)</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
+            <tr>
+                <td>@persoon.Aanhef</td>
+                <td>@persoon.Aanschrijfwijze</td>
+                <td>@persoon.Burgerservicenummer</td>
+                <td>@persoon.DatumGeboorte</td>
+                <td>@persoon.DatumGeboorteBevolking</td>
+                <td>@persoon.DatumOverlijden</td>
+                <td>@persoon.Geboorteland</td>
+                <td>@persoon.Geheim</td>
+                <td>@persoon.Geslacht</td>
+                <td>@persoon.Naam</td>
+                <td>@persoon.Nationaliteit1</td>
+                <td>@persoon.Nationaliteit2</td>
+                <td>@persoon.Voorletters</td>
+                <td>@persoon.Voornamen</td>
+                <td>@persoon.Voorvoegsels</td>
+            </tr>
         </tbody>
     </table>
 }
 
 @code {
-    private WeatherForecast[] forecasts;
+    //private WeatherForecast[] forecasts;
+    private Persoon persoon;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        //forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        persoon = bipService.GetPersoon();
     }
 }
