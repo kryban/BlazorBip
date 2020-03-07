@@ -1,9 +1,25 @@
 ﻿@page "/bip"
 
+
+@using BevragingIngeschrevenPersonen.Types;
+@using BevragingIngeschrevenPersonen;
+@using Data;
+
+
 <h3>Zoek Persoon</h3>
 
-<input alt="ZoekCriteria" />
+<input @bind="inp" class="input-group-text" alt="ZoekCriteria" />
+<button @onclick="ZoekIngeschrevenPersoon">Zoek</button>
 
 @code {
+    Bevrager bevrager = new Bevrager();
 
+    public string inp { get; set; }
+
+    private Persoon persoon;
+
+    private void ZoekIngeschrevenPersoon()
+    {
+        persoon = bevrager.GetPersoon(inp);
+    }
 }

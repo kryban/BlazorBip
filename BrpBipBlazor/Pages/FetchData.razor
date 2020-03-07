@@ -1,9 +1,10 @@
 ﻿@page "/fetchdata"
 
-@using BrpBipBlazor.Data
-@using BrpBipApi.Types;
-@inject WeatherForecastService ForecastService
-@inject BipService bipService;
+@using BevragingIngeschrevenPersonen.Types;
+@using BevragingIngeschrevenPersonen;
+
+
+@inject Bevrager bevrager;
 
 <h1>Bevraging ingeschreven personen (Bip)</h1>
 
@@ -64,6 +65,6 @@ else
     protected override async Task OnInitializedAsync()
     {
         //forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-        persoon = bipService.GetPersoon();
+        persoon = bevrager.GetPersoon(999993653.ToString());
     }
 }

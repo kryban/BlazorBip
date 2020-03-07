@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BrpBipApi\BrpBipApi.csproj" />
+    <ProjectReference Include="..\BevragingIngeschrevenPersonen\BevragingIngeschrevenPersonen.csproj" />
   </ItemGroup>
 
 </Project>
