@@ -28,6 +28,7 @@ namespace BrpBipBlazor
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<BipService>();
 
