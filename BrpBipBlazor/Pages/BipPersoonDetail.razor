@@ -1,12 +1,30 @@
 ﻿
-<h6>@ToonTitel()</h6>
-
 @using BevragingIngeschrevenPersonen.Types;
 
+<h4>@ToonTitel()</h4>
 
 @if (BrpPersoon != null)
 {
-    <div>@BrpPersoon.Burgerservicenummer</div>
+<table class="table-responsive">
+    <tr><td></td><td></td></tr>
+    <tr><td>@nameof(BrpPersoon.Aanhef)</td>                    <td>@BrpPersoon.Aanhef</td></tr>
+    <tr><td>@nameof(BrpPersoon.Aanschrijfwijze)</td>           <td>@BrpPersoon.Aanschrijfwijze</td></tr>
+    <tr><td>@nameof(BrpPersoon.Burgerservicenummer)</td>       <td>@BrpPersoon.Burgerservicenummer</td></tr>
+    <tr><td>@nameof(BrpPersoon.DatumGeboorte)</td>             <td>@BrpPersoon.DatumGeboorte</td></tr>
+    <tr><td>@nameof(BrpPersoon.DatumGeboorteBevolking)</td>    <td>@BrpPersoon.DatumGeboorteBevolking</td></tr>
+    <tr><td>@nameof(BrpPersoon.DatumOverlijden)</td>           <td>@BrpPersoon.DatumOverlijden</td></tr>
+    <tr><td>@nameof(BrpPersoon.Geboorteland)</td>              <td>@BrpPersoon.Geboorteland</td></tr>
+    <tr><td>@nameof(BrpPersoon.Geheim)</td>                    <td>@BrpPersoon.Geheim</td></tr>
+    <tr><td>@nameof(BrpPersoon.Geslacht)</td>                  <td>@BrpPersoon.Geslacht</td></tr>
+    <tr><td>@nameof(BrpPersoon.Naam)</td>                      <td>@BrpPersoon.Naam</td></tr>
+    <tr><td>@nameof(BrpPersoon.Nationaliteit1)</td>            <td>@BrpPersoon.Nationaliteit1</td></tr>
+    <tr><td>@nameof(BrpPersoon.Nationaliteit2)</td>            <td>@BrpPersoon.Nationaliteit2</td></tr>
+    <tr><td>@nameof(BrpPersoon.Voorletters)</td>               <td>@BrpPersoon.Voorletters</td></tr>
+    <tr><td>@nameof(BrpPersoon.Voornamen)</td>                 <td>@BrpPersoon.Voornamen</td></tr>
+    <tr><td>@nameof(BrpPersoon.Voorvoegsels)</td>              <td>@BrpPersoon.Voorvoegsels</td></tr>
+
+</table>
+
 }
 
 @code {

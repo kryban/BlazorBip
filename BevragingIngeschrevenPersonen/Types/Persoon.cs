@@ -51,7 +51,7 @@ namespace BevragingIngeschrevenPersonen.Types
         //Bij wijziging van de afstamming of van de eigen nationaliteit kan de geslachtsnaam wijzigen. 
         //Heeft de natuurlijke persoon geen geslachtsnaam, dan gelden de namen als geslachtsnaam. 
         //Is de geslachtsnaam onbekend dan staat op de eerste positie een punt.
-        public string Naam { get; set; }
+        public virtual string Naam { get; set; }
 
         //Voorvoegsels van een geslachtsnaam. De onlosmakelijk tot de geslachtsnaam behorende gegevens waarmee deze begint.
         public string? Voorvoegsels { get; set; }

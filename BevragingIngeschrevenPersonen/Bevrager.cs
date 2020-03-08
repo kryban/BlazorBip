@@ -42,6 +42,10 @@ namespace BevragingIngeschrevenPersonen
 
                 return retVal;
             }
+            catch(AggregateException e)
+            {
+                return new PersoonNietGevonden();
+            }
             catch (Exception)
             {
                 throw;
