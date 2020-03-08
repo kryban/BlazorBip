@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using BrpBipBlazor.Data;
 using BevragingIngeschrevenPersonen;
 
 namespace BrpBipBlazor
@@ -30,7 +29,6 @@ namespace BrpBipBlazor
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<Bevrager>();
 
         }
