@@ -1,0 +1,26 @@
+﻿
+<h6>@ToonTitel()</h6>
+
+@using BevragingIngeschrevenPersonen.Types;
+
+
+@if (BrpPersoon != null)
+{
+    <div>@BrpPersoon.Burgerservicenummer</div>
+}
+
+@code {
+
+    private string titel;
+
+    [Parameter]
+    public Persoon BrpPersoon { get; set; }
+
+    [Parameter]
+    public EventCallback<Persoon> BrpPersoonChanged { get; set; }
+
+    public string ToonTitel()
+    {
+        return BrpPersoon != null ? BrpPersoon.Naam : "Detailgegevens:";
+    }
+}

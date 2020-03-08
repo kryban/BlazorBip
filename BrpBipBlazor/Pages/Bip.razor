@@ -4,11 +4,12 @@
 @using BevragingIngeschrevenPersonen.Types;
 @using BevragingIngeschrevenPersonen;
 
-
 <h3>Zoek Persoon</h3>
 
-<input @bind="inp" class="input-group-text" alt="ZoekCriteria" />
+<input @bind="inp" alt="ZoekCriteria" />
 <button @onclick="ZoekIngeschrevenPersoon">Zoek</button>
+
+<BipPersoonDetail @bind-BrpPersoon="persoon"></BipPersoonDetail>
 
 @code {
     Bevrager bevrager = new Bevrager();
