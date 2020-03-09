@@ -22,9 +22,14 @@
     <tr><td>@nameof(BrpPersoon.Voorletters)</td>               <td>@BrpPersoon.Voorletters</td></tr>
     <tr><td>@nameof(BrpPersoon.Voornamen)</td>                 <td>@BrpPersoon.Voornamen</td></tr>
     <tr><td>@nameof(BrpPersoon.Voorvoegsels)</td>              <td>@BrpPersoon.Voorvoegsels</td></tr>
-
 </table>
 
+    if (BrpPersoon.Burgerservicenummer != null)
+    {
+        <button>Ouders</button>
+        <button>Kinderen</button>
+        <button>Medebewoners</button>
+    }
 }
 
 @code {
