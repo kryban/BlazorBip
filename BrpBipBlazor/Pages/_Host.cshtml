@@ -15,6 +15,42 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap-collapse.js"></script>
+    <style>
+        tbody.collapse.in {
+            display: table-row-group;
+        }
+    </style>
+    <script>
+        //$(".head").click(function () {
+        //    if ($("#collapsable").hasClass("out")) {
+        //        $("#collapsable").addClass("in");
+        //        $("#collapsable").removeClass("out");
+        //    }
+        //    else {
+        //        $("#collapsable").addClass("out");
+        //        $("#collapsable").removeClass("in");
+        //    }
+        //});
+        window.jstoggler = () => {
+            
+            if ($(".collapse").hasClass("out")) {
+                $(".collapse").addClass("in");
+                $(".collapse").removeClass("out");
+            }
+
+            alert("Hoi: " + $(".collapse").hasClass("out"));
+
+            //if ($("#collapsable").hasClass("out")) {
+            //    $("#collapsable").addClass("in");
+            //    $("#collapsable").removeClass("out");
+            //}
+            //else {
+            //    $("#collapsable").addClass("out");
+            //    $("#collapsable").removeClass("in");
+            //}
+        }
+    </script>
 </head>
 <body>
     <app>
@@ -31,22 +67,6 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-
-    <script>
-        function jsCollapser() {
-            $(".head").click(function () {
-                if ($("#collapsable").hasClass("out")) {
-                    $("#collapsable").addClass("in");
-                    $("#collapsable").removeClass("out");
-                }
-                else {
-                    $("#collapsable").addClass("out");
-                    $("#collapsable").removeClass("in");
-                }
-            });
-        }
-    </script>
-
     <script src="_framework/blazor.server.js"></script>
 </body>
 </html>
