@@ -14,7 +14,8 @@
 else
 {
    
-    <h4 data-toggle="collapse" data-target=@("#" + Persoon.Naam) aria-expanded="false" aria-controls=@Persoon.Naam style="cursor:pointer;">
+    <h4 data-toggle="collapse" data-target=@("#" + Persoon.Burgerservicenummer) 
+        aria-expanded="false" aria-controls=@Persoon.Burgerservicenummer style="cursor:pointer;">
         @ToonTitel()
     </h4>
 
@@ -23,7 +24,7 @@ else
                 <tr class="clickable" style="cursor:pointer;" data-toggle="collapse" data-target="#group-of-rows-1" aria-expanded="false" aria-controls="group-of-rows-1">
                 <td>@BrpPersoon.Aanschrijfwijze</td><td></td></tr>
             </tbody>*@
-        <tbody id=@Persoon.Naam class="collapse">
+        <tbody id=@Persoon.Burgerservicenummer class="collapse">
             <tr class="table-responsive-sm">
                 <td>@nameof(Persoon.Aanhef)</td>
                 <td>@Persoon.Aanhef</td>
