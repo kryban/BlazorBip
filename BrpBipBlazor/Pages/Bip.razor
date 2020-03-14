@@ -9,7 +9,7 @@
 <input @bind="inp" alt="ZoekCriteria" />
 <button @onclick="ZoekIngeschrevenPersoon">Zoek</button>
 
-@if (persoon != null && !(persoon is PersoonNietGevonden))
+@if (persoonCompositie != null && persoonCompositie.Persoon != null && !(persoonCompositie.Persoon is PersoonNietGevonden))
 {
     <button>Ouders</button>
     <button>Kinderen</button>
@@ -18,19 +18,45 @@
 
 <div style="height:20px;"></div>
 
-<BipPersoonDetail @bind-BrpPersoonCompositie="persoonCompositie"></BipPersoonDetail>
+
+
+<BipPersoonDetail @bind-Persoon="persoonCompositie.Persoon"></BipPersoonDetail>
+
+@if (persoonCompositie.Ouders != null)
+{
+    @foreach (var ouder in persoonCompositie.Ouders)
+    {
+        <BipPersoonDetail @bind-PersoonContext="ouder.SoortRelatie" @bind-Persoon="ouder.Persoon"></BipPersoonDetail>
+    }
+}
 
 @code {
     Bevrager bevrager = new Bevrager();
 
     public string inp { get; set; }
 
-    private Persoon persoon;
-    private PersoonCompositie persoonCompositie;
+    private PersoonCompositie persoonCompositie = new PersoonCompositie();
 
     private void ZoekIngeschrevenPersoon()
     {
-        persoon = bevrager.GetPersoon(inp);
-        persoonCompositie = new PersoonCompositie { Persoon = persoon };
-}
+        persoonCompositie.Persoon = bevrager.GetPersoon(inp);
+    }
+
+    private void ZoekOuders()
+    {
+        persoonCompositie.Ouders = new List<Relatie>();
+        int i = 1;
+        foreach (var ouder in bevrager.GetOuders(inp))
+        {
+            persoonCompositie.Ouders.Add(
+                new Relatie
+                {
+                    SoortRelatie = "Ouder" + i++,
+                    Persoon = ouder
+                }
+                );
+        }
+    }
+
+
 }
