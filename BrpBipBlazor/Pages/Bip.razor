@@ -11,7 +11,7 @@
 
 @if (persoonCompositie != null && persoonCompositie.Persoon != null && !(persoonCompositie.Persoon is PersoonNietGevonden))
 {
-    <button>Ouders</button>
+    <button @onclick="ZoekOuders">Ouders</button>
     <button>Kinderen</button>
     <button>Medebewoners</button>
 }
