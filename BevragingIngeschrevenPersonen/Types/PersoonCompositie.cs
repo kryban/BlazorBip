@@ -2,7 +2,7 @@
 
 namespace BevragingIngeschrevenPersonen.Types
 {
-    class PersoonCompositie
+    public class PersoonCompositie
     {
         public Persoon Persoon { get; set; }
         public Adres Adres { get; set; }

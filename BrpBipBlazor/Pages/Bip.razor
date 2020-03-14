@@ -9,7 +9,7 @@
 <input @bind="inp" alt="ZoekCriteria" />
 <button @onclick="ZoekIngeschrevenPersoon">Zoek</button>
 
-@if (persoon != null)
+@if (persoon != null && !(persoon is PersoonNietGevonden))
 {
     <button>Ouders</button>
     <button>Kinderen</button>
@@ -18,7 +18,7 @@
 
 <div style="height:20px;"></div>
 
-<BipPersoonDetail @bind-BrpPersoon="persoon"></BipPersoonDetail>
+<BipPersoonDetail @bind-BrpPersoonCompositie="persoonCompositie"></BipPersoonDetail>
 
 @code {
     Bevrager bevrager = new Bevrager();
@@ -26,9 +26,11 @@
     public string inp { get; set; }
 
     private Persoon persoon;
+    private PersoonCompositie persoonCompositie;
 
     private void ZoekIngeschrevenPersoon()
     {
         persoon = bevrager.GetPersoon(inp);
-    }
+        persoonCompositie = new PersoonCompositie { Persoon = persoon };
+}
 }

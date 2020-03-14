@@ -8,7 +8,7 @@
     @ToonTitel()
 </h4>
 
-@if (BrpPersoon != null)
+@if (BrpPersoonCompositie != null && BrpPersoonCompositie.Persoon != null)
 {
     <table class="table table-sm">
         @*<tbody>
@@ -16,42 +16,53 @@
             <td>@BrpPersoon.Aanschrijfwijze</td><td></td></tr>
         </tbody>*@
         <tbody id="group-of-rows-1" class="collapse">
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Aanhef)</td>                    <td>@BrpPersoon.Aanhef</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Aanschrijfwijze)</td            <td>@BrpPersoon.Aanschrijfwijze</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Burgerservicenummer)</td>       <td>@BrpPersoon.Burgerservicenummer</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.DatumGeboorte)</td>             <td>@BrpPersoon.DatumGeboorte</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.DatumGeboorteBevolking)</td>    <td>@BrpPersoon.DatumGeboorteBevolking</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.DatumOverlijden)</td>           <td>@BrpPersoon.DatumOverlijden</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Geboorteland)</td>              <td>@BrpPersoon.Geboorteland</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Geheim)</td>                    <td>@BrpPersoon.Geheim</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Geslacht)</td>                  <td>@BrpPersoon.Geslacht</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Naam)</td>                      <td>@BrpPersoon.Naam</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Nationaliteit1)</td>            <td>@BrpPersoon.Nationaliteit1</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Nationaliteit2)</td>            <td>@BrpPersoon.Nationaliteit2</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Voorletters)</td>               <td>@BrpPersoon.Voorletters</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Voornamen)</td>                 <td>@BrpPersoon.Voornamen</td></tr>
-            <tr class="table-responsive-sm"><td>@nameof(BrpPersoon.Voorvoegsels)</td>              <td>@BrpPersoon.Voorvoegsels</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Aanhef)</td>                    
+                                                   <td>@BrpPersoonCompositie.Persoon.Aanhef</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Aanschrijfwijze)</td            
+                                                   <td>@BrpPersoonCompositie.Persoon.Aanschrijfwijze</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Burgerservicenummer)</td>       
+                                                   <td>@BrpPersoonCompositie.Persoon.Burgerservicenummer</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.DatumGeboorte)</td>             
+                                                   <td>@BrpPersoonCompositie.Persoon.DatumGeboorte</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.DatumGeboorteBevolking)</td>    
+                                                   <td>@BrpPersoonCompositie.Persoon.DatumGeboorteBevolking</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.DatumOverlijden)</td>           
+                                                   <td>@BrpPersoonCompositie.Persoon.DatumOverlijden</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Geboorteland)</td>              
+                                                   <td>@BrpPersoonCompositie.Persoon.Geboorteland</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Geheim)</td>                    
+                                                   <td>@BrpPersoonCompositie.Persoon.Geheim</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Geslacht)</td>                  
+                                                   <td>@BrpPersoonCompositie.Persoon.Geslacht</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Naam)</td>                      
+                                                   <td>@BrpPersoonCompositie.Persoon.Naam</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Nationaliteit1)</td>            
+                                                   <td>@BrpPersoonCompositie.Persoon.Nationaliteit1</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Nationaliteit2)</td>            
+                                                   <td>@BrpPersoonCompositie.Persoon.Nationaliteit2</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Voorletters)</td>               
+                                                   <td>@BrpPersoonCompositie.Persoon.Voorletters</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Voornamen)</td>                 
+                                                   <td>@BrpPersoonCompositie.Persoon.Voornamen</td></tr>
+            <tr class="table-responsive-sm"><td>@nameof(BrpPersoonCompositie.Persoon.Voorvoegsels)</td>              
+                                                   <td>@BrpPersoonCompositie.Persoon.Voorvoegsels</td></tr>
         </tbody>
     </table>
 
-    if (BrpPersoon.Burgerservicenummer != null)
-    {
-
-    }
 }
 
 @code {
     private string titel;
 
     [Parameter]
-    public Persoon BrpPersoon { get; set; }
-
+    public PersoonCompositie BrpPersoonCompositie { get; set; }
     [Parameter]
-    public EventCallback<Persoon> BrpPersoonChanged { get; set; }
+    public EventCallback<PersoonCompositie> BrpPersoonCompositieChanged { get; set; }
+
 
     public string ToonTitel()
     {
-        return BrpPersoon != null ? BrpPersoon.Aanschrijfwijze : "";
+        return BrpPersoonCompositie != null ? BrpPersoonCompositie.Persoon.Aanschrijfwijze : "";
     }
 
     public async Task Collapser()

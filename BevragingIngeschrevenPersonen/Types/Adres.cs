@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BevragingIngeschrevenPersonen.Types
 {
-    class Adres
+    public class Adres
     {
         public string Sraat { get; set; }
     }

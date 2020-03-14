@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BevragingIngeschrevenPersonen.Types
 {
-    class PersoonNietGevonden: Persoon
+    public class PersoonNietGevonden: Persoon
     {
         public override string Naam { get => "Niet gevonden"; }
     }
