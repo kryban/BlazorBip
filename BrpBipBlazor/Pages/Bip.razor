@@ -8,6 +8,14 @@
 @*999993653*@
 <input @bind="inp" alt="ZoekCriteria" />
 <button @onclick="ZoekIngeschrevenPersoon">Zoek</button>
+
+@if (persoon != null)
+{
+    <button>Ouders</button>
+    <button>Kinderen</button>
+    <button>Medebewoners</button>
+}
+
 <div style="height:20px;"></div>
 
 <BipPersoonDetail @bind-BrpPersoon="persoon"></BipPersoonDetail>

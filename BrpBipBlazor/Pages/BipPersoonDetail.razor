@@ -4,7 +4,9 @@
 
 @inject IJSRuntime JSRuntime
 
-<h4 data-toggle="collapse" data-target="#group-of-rows-1" aria-expanded="false" aria-controls="group-of-rows-1" style="cursor:pointer;">@ToonTitel()</h4>
+<h4 data-toggle="collapse" data-target="#group-of-rows-1" aria-expanded="false" aria-controls="group-of-rows-1" style="cursor:pointer;">
+    @ToonTitel()
+</h4>
 
 @if (BrpPersoon != null)
 {
@@ -34,9 +36,7 @@
 
     if (BrpPersoon.Burgerservicenummer != null)
     {
-        <button>Ouders</button>
-        <button>Kinderen</button>
-        <button>Medebewoners</button>
+
     }
 }
 

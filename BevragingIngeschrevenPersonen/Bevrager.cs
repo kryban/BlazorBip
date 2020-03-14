@@ -53,22 +53,22 @@ namespace BevragingIngeschrevenPersonen
 
         }
 
-        /*
-
-
         // GET: api/IngeschrevenPersoonOuders/5
-        [HttpGet("/api/ingeschrevenpersoon/{id}/ouders")]
+        //[HttpGet("/api/ingeschrevenpersoon/{id}/ouders")]
         public IEnumerable<Persoon> GetOuders(string id)
         {
-            List<Persoon> retVal;
+            List<Persoon> retVal = new List<Persoon>();
             OuderHalCollectie brpSubResults;
 
-            brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummeroudersAsync(id, null).Result;
-            retVal = HaalPersoonsgegevensOp(brpSubResults._embedded.Ouders.Select(x => x.Burgerservicenummer));
+            brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummeroudersAsync(id).Result;
+            
+            foreach(var ouder in brpSubResults._embedded.Ouders)
+            {
+                retVal.Add(GetPersoon(ouder.Burgerservicenummer));
+            }
 
             return retVal;
         }
-        */
         /*
         // GET: api/IngeschrevenPersoonOuders/5
         [HttpGet("/api/ingeschrevenpersoon/{id}/kinderen")]
