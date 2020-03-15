@@ -43,19 +43,13 @@
 
     private void ZoekOuders()
     {
-        persoonCompositie.Ouders = new List<Relatie>();
-        int i = 1;
-        foreach (var ouder in bevrager.GetOuders(inp))
-        {
-            persoonCompositie.Ouders.Add(
-                new Relatie
-                {
-                    SoortRelatie = "Ouder" + i++,
-                    Persoon = ouder
-                }
-                );
-        }
+        persoonCompositie.Ouders = bevrager.GetOuders(inp)
+            .Select(x => new Relatie { SoortRelatie = "Ouder", Persoon = x }).ToList();
     }
 
+    private void ZoekKinderen()
+    {
+        persoonCompositie.Kinderen = new List<Relatie>();
 
+    }
 }
