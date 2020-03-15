@@ -18,13 +18,22 @@
 
 <div style="height:20px;"></div>
 
-<BipPersoonDetail @bind-Persoon="persoonCompositie.Persoon"></BipPersoonDetail>
 
 @if (persoonCompositie.Ouders != null)
 {
     @foreach (var ouder in persoonCompositie.Ouders)
     {
         <BipPersoonDetail @bind-PersoonContext="ouder.SoortRelatie" @bind-Persoon="ouder.Persoon"></BipPersoonDetail>
+    }
+}
+
+<BipPersoonDetail @bind-Persoon="persoonCompositie.Persoon"></BipPersoonDetail>
+
+@if (persoonCompositie.Kinderen != null)
+{
+    @foreach (var kind in persoonCompositie.Kinderen)
+    {
+        <BipPersoonDetail @bind-PersoonContext="kind.SoortRelatie" @bind-Persoon="kind.Persoon"></BipPersoonDetail>
     }
 }
 
@@ -43,13 +52,18 @@
 
     private void ZoekOuders()
     {
-        persoonCompositie.Ouders = bevrager.GetOuders(inp)
+        var bsn = persoonCompositie?.Persoon?.Burgerservicenummer ?? 0;
+
+        persoonCompositie.Ouders = bevrager.GetOuders(bsn.ToString())
             .Select(x => new Relatie { SoortRelatie = "Ouder", Persoon = x }).ToList();
     }
 
     private void ZoekKinderen()
     {
-        persoonCompositie.Kinderen = new List<Relatie>();
+        var bsn = persoonCompositie?.Persoon?.Burgerservicenummer ?? 0;
+
+        persoonCompositie.Kinderen = bevrager.GetKinderen(bsn.ToString())
+            .Select(x => new Relatie { SoortRelatie = "Kind", Persoon = x }).ToList();
 
     }
 }

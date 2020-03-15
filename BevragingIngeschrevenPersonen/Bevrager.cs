@@ -69,20 +69,24 @@ namespace BevragingIngeschrevenPersonen
 
             return retVal;
         }
-        /*
+
         // GET: api/IngeschrevenPersoonOuders/5
-        [HttpGet("/api/ingeschrevenpersoon/{id}/kinderen")]
+        //[HttpGet("/api/ingeschrevenpersoon/{id}/kinderen")]
         public IEnumerable<Persoon> GetKinderen(string id)
         {
-            List<Persoon> retVal;
+            List<Persoon> retVal = new List<Persoon>();
             KindHalCollectie brpSubResults;
 
-            brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummerkinderenAsync(id, null).Result;
-            retVal = HaalPersoonsgegevensOp(brpSubResults._embedded.Kinderen.Select(x => x.Burgerservicenummer));
+            brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummerkinderenAsync(id).Result;
+
+            foreach (var ouder in brpSubResults._embedded.Kinderen)
+            {
+                retVal.Add(GetPersoon(ouder.Burgerservicenummer));
+            }
 
             return retVal;
         }
-        */
+
         /*
         // GET: api/IngeschrevenPersoonOuders/5
         [HttpGet("/api/ingeschrevenpersoon/{id}/partners")]
@@ -133,23 +137,23 @@ namespace BevragingIngeschrevenPersonen
         //    return retVal;
         //}
         */
-        /*
-        private List<Persoon> HaalPersoonsgegevensOp(IEnumerable<string> burgerservicenummers)
-        {
-        List<Persoon> retVal = new List<Persoon>();
-        foreach (var bsn in burgerservicenummers)
-        {
-        try
-        {
-        Persoon kind = HaalGegevensOpUitBrp(bsn);
-        retVal.Add(kind);
-        }
-        catch (AggregateException e)
-        { };
-        }
-        return retVal;
-        }
-        */
+
+        //private List<Persoon> HaalPersoonsgegevensOp(IEnumerable<string> burgerservicenummers)
+        //{
+        //    List<Persoon> retVal = new List<Persoon>();
+        //    foreach (var bsn in burgerservicenummers)
+        //    {
+        //        try
+        //        {
+        //            Persoon kind = HaalGegevensOpUitBrp(bsn);
+        //            retVal.Add(kind);
+        //        }
+        //        catch (AggregateException e)
+        //        { };
+        //    }
+        //    return retVal;
+        //}
+
         /*
         private Persoon HaalGegevensOpUitBrp(string bsn)
         {
