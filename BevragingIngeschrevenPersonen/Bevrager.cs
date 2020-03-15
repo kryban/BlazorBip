@@ -58,16 +58,20 @@ namespace BevragingIngeschrevenPersonen
         public IEnumerable<IPersoon> GetOuders(string id)
         {
             List<IPersoon> retVal = new List<IPersoon>();
-            OuderHalCollectie brpSubResults;
+            OuderHalCollectie brpSubResultsOuder;
 
-            brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummeroudersAsync(id).Result ?? new OuderHalCollectie();
+            brpSubResultsOuder = bipClient.IngeschrevenpersonenBurgerservicenummeroudersAsync(id).Result ?? new OuderHalCollectie();
 
-            if (brpSubResults._embedded.Ouders != null)
+            if (brpSubResultsOuder._embedded.Ouders != null)
             {
-                foreach (var ouder in brpSubResults._embedded.Ouders)
+                foreach (var ouder in brpSubResultsOuder._embedded.Ouders)
                 {
                     retVal.Add(GetPersoon(ouder.Burgerservicenummer));
                 }
+            }
+            else
+            {
+                retVal.Add(new PersoonNietGevonden());
             }
 
             return retVal;
@@ -78,16 +82,20 @@ namespace BevragingIngeschrevenPersonen
         public IEnumerable<IPersoon> GetKinderen(string id)
         {
             List<IPersoon> retVal = new List<IPersoon>();
-            KindHalCollectie brpSubResults;
+            KindHalCollectie brpSubResultsKind;
 
-            brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummerkinderenAsync(id).Result;
+            brpSubResultsKind = bipClient.IngeschrevenpersonenBurgerservicenummerkinderenAsync(id).Result ?? new KindHalCollectie();
 
-            if (brpSubResults._embedded.Kinderen != null)
+            if (brpSubResultsKind._embedded.Kinderen != null)
             {
-                foreach (var ouder in brpSubResults._embedded.Kinderen)
+                foreach (var ouder in brpSubResultsKind._embedded.Kinderen)
                 {
                     retVal.Add(GetPersoon(ouder.Burgerservicenummer));
                 }
+            }
+            else
+            {
+                retVal.Add(new PersoonNietGevonden());
             }
 
             return retVal;

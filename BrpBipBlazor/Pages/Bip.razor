@@ -19,32 +19,34 @@
 <div style="height:20px;"></div>
 
 
-@if (persoonCompositie.Ouders != null)
+@if (persoonCompositie.Ouders != null && persoonCompositie.Ouders.Count > 0)
 {
     @foreach (var ouder in persoonCompositie.Ouders)
     {
         <BipPersoonDetail @bind-PersoonContext="ouder.SoortRelatie" @bind-Persoon="ouder.Persoon"></BipPersoonDetail>
     }
 }
-else
+else if (persoonCompositie.Persoon != null)
 {
-    //<BipPersoonDetail @bind-PersoonContext=@("Ouder") @bind-Persoon=@(new PersoonNietGevonden())></BipPersoonDetail>
+    var foo = "Ouder";
+    var bar = new PersoonNietGevonden();
+    <BipPersoonDetail @bind-PersoonContext="foo" @bind-PersoonNietGevonden=bar></BipPersoonDetail>
 }
 
 <BipPersoonDetail @bind-Persoon="persoonCompositie.Persoon"></BipPersoonDetail>
 
-@if (persoonCompositie.Kinderen != null)
+@if (persoonCompositie.Kinderen != null && persoonCompositie.Kinderen.Count > 0)
 {
     @foreach (var kind in persoonCompositie.Kinderen)
     {
         <BipPersoonDetail @bind-PersoonContext="kind.SoortRelatie" @bind-Persoon="kind.Persoon"></BipPersoonDetail>
     }
 }
-else
+else if (persoonCompositie.Persoon != null)
 {
     var foo = "Kind";
-    //var bar = new PersoonNietGevonden();
-    //<BipPersoonDetail @bind-PersoonContext="foo" @bind-Persoon=null></BipPersoonDetail>*@
+    var bar = new PersoonNietGevonden();
+<BipPersoonDetail @bind-PersoonContext="foo" @bind-PersoonNietGevonden=bar></BipPersoonDetail>
 }
 
 @code {
@@ -74,6 +76,8 @@ else
 
         persoonCompositie.Kinderen = bevrager.GetKinderen(bsn.ToString())
             .Select(x => new Relatie { SoortRelatie = "Kind", Persoon = x }).ToList();
+
+        var foo = persoonCompositie.Kinderen;
 
     }
 }

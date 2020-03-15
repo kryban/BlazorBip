@@ -5,7 +5,7 @@
 @inject IJSRuntime JSRuntime
 
 
-@if (Persoon == null)
+@if (Persoon == null || PersoonNietGevonden != null)
 {
     <h4>
         @ToonTitel()
@@ -99,6 +99,12 @@ else
     public IPersoon Persoon { get; set; }
     [Parameter]
     public EventCallback<IPersoon> PersoonChanged { get; set; }
+
+    [Parameter]
+    public PersoonNietGevonden PersoonNietGevonden { get; set; }
+    [Parameter]
+    public EventCallback<PersoonNietGevonden> PersoonNietGevondenChanged { get; set; }
+
 
     [Parameter]
     public string PersoonContext { get; set; }
