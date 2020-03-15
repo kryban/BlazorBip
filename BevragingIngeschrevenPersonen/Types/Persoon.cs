@@ -3,7 +3,7 @@ using System;
 
 namespace BevragingIngeschrevenPersonen.Types
 {
-    public class Persoon
+    public class Persoon : IPersoon
     {
         public Persoon()
         {
@@ -115,7 +115,7 @@ namespace BevragingIngeschrevenPersonen.Types
 
         //Indicatie die aangeeft of de persoonsgegevens(extra) vertrouwelijk behandeld moeten worden.
         //GEHEIM                  NUMBER(1,0)         No		17	
-        public bool Geheim { get; set; }
+        public bool? Geheim { get; set; }
 
         //Nummer waarmee een werkgever geidentificeerd kan worden.
         //WERKGEVERSNR VARCHAR2(15 BYTE)   Yes		18	
@@ -145,7 +145,7 @@ namespace BevragingIngeschrevenPersonen.Types
 
         public string? Aanhef { get; set; }
 
-        public string? Aanschrijfwijze { get; set; }
+        public virtual string? Aanschrijfwijze { get; set; }
 
     }
 }

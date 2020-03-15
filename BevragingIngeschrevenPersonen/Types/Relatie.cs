@@ -3,6 +3,6 @@
     public class Relatie
     {
         public string SoortRelatie { get; set; }
-        public Persoon Persoon { get; set; }
+        public IPersoon Persoon { get; set; }
     }
 }

@@ -4,7 +4,7 @@ namespace BevragingIngeschrevenPersonen.Types
 {
     public class PersoonCompositie
     {
-        public Persoon Persoon { get; set; }
+        public IPersoon Persoon { get; set; }
         public Adres Adres { get; set; }
         public List<Relatie> Ouders { get; set; }
         public List<Relatie> Kinderen { get; set; }

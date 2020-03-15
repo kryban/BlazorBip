@@ -28,7 +28,7 @@ namespace BevragingIngeschrevenPersonen
         //[HttpGet("{id}", Name = "GetNatuurlijkPersoon")]
         //[HttpGet("/api/ingeschrevenpersoon/{id}")]
         //[Route("api/ingeschrevenpersoon")]
-        public Persoon GetPersoon(string id)
+        public IPersoon GetPersoon(string id)
         {
             //999993653
             try
@@ -55,16 +55,19 @@ namespace BevragingIngeschrevenPersonen
 
         // GET: api/IngeschrevenPersoonOuders/5
         //[HttpGet("/api/ingeschrevenpersoon/{id}/ouders")]
-        public IEnumerable<Persoon> GetOuders(string id)
+        public IEnumerable<IPersoon> GetOuders(string id)
         {
-            List<Persoon> retVal = new List<Persoon>();
+            List<IPersoon> retVal = new List<IPersoon>();
             OuderHalCollectie brpSubResults;
 
-            brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummeroudersAsync(id).Result;
-            
-            foreach(var ouder in brpSubResults._embedded.Ouders)
+            brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummeroudersAsync(id).Result ?? new OuderHalCollectie();
+
+            if (brpSubResults._embedded.Ouders != null)
             {
-                retVal.Add(GetPersoon(ouder.Burgerservicenummer));
+                foreach (var ouder in brpSubResults._embedded.Ouders)
+                {
+                    retVal.Add(GetPersoon(ouder.Burgerservicenummer));
+                }
             }
 
             return retVal;
@@ -72,16 +75,19 @@ namespace BevragingIngeschrevenPersonen
 
         // GET: api/IngeschrevenPersoonOuders/5
         //[HttpGet("/api/ingeschrevenpersoon/{id}/kinderen")]
-        public IEnumerable<Persoon> GetKinderen(string id)
+        public IEnumerable<IPersoon> GetKinderen(string id)
         {
-            List<Persoon> retVal = new List<Persoon>();
+            List<IPersoon> retVal = new List<IPersoon>();
             KindHalCollectie brpSubResults;
 
             brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummerkinderenAsync(id).Result;
 
-            foreach (var ouder in brpSubResults._embedded.Kinderen)
+            if (brpSubResults._embedded.Kinderen != null)
             {
-                retVal.Add(GetPersoon(ouder.Burgerservicenummer));
+                foreach (var ouder in brpSubResults._embedded.Kinderen)
+                {
+                    retVal.Add(GetPersoon(ouder.Burgerservicenummer));
+                }
             }
 
             return retVal;

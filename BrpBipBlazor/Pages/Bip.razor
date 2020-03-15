@@ -12,7 +12,7 @@
 @if (persoonCompositie != null && persoonCompositie.Persoon != null && !(persoonCompositie.Persoon is PersoonNietGevonden))
 {
     <button @onclick="ZoekOuders">Ouders</button>
-    <button>Kinderen</button>
+    <button @onclick="ZoekKinderen">Kinderen</button>
     <button>Medebewoners</button>
 }
 
@@ -26,6 +26,10 @@
         <BipPersoonDetail @bind-PersoonContext="ouder.SoortRelatie" @bind-Persoon="ouder.Persoon"></BipPersoonDetail>
     }
 }
+else
+{
+    //<BipPersoonDetail @bind-PersoonContext=@("Ouder") @bind-Persoon=@(new PersoonNietGevonden())></BipPersoonDetail>
+}
 
 <BipPersoonDetail @bind-Persoon="persoonCompositie.Persoon"></BipPersoonDetail>
 
@@ -35,6 +39,12 @@
     {
         <BipPersoonDetail @bind-PersoonContext="kind.SoortRelatie" @bind-Persoon="kind.Persoon"></BipPersoonDetail>
     }
+}
+else
+{
+    var foo = "Kind";
+    //var bar = new PersoonNietGevonden();
+    //<BipPersoonDetail @bind-PersoonContext="foo" @bind-Persoon=null></BipPersoonDetail>*@
 }
 
 @code {

@@ -96,9 +96,9 @@ else
     private string titel;
 
     [Parameter]
-    public Persoon Persoon { get; set; }
+    public IPersoon Persoon { get; set; }
     [Parameter]
-    public EventCallback<Persoon> PersoonChanged { get; set; }
+    public EventCallback<IPersoon> PersoonChanged { get; set; }
 
     [Parameter]
     public string PersoonContext { get; set; }
