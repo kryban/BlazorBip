@@ -1,4 +1,4 @@
-﻿namespace BevragingIngeschrevenPersonen.Types
+﻿namespace Bevolking.Types
 {
     public class Relatie
     {

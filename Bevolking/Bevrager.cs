@@ -1,10 +1,10 @@
-﻿using BevragingIngeschrevenPersonen.Mappers;
-using BevragingIngeschrevenPersonen.Types;
+﻿using Bevolking.Mappers;
+using Bevolking.Types;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BevragingIngeschrevenPersonen
+namespace Bevolking
 {
     public class Bevrager
     {
@@ -101,20 +101,20 @@ namespace BevragingIngeschrevenPersonen
             return retVal;
         }
 
-        /*
-        // GET: api/IngeschrevenPersoonOuders/5
-        [HttpGet("/api/ingeschrevenpersoon/{id}/partners")]
-        public IEnumerable<Persoon> GetPartners(string id)
-        {
-        List<Persoon> retVal;
-        PartnerHalCollectie brpSubResults;
 
-        brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummerpartnersAsync(id, null).Result;
-        retVal = HaalPersoonsgegevensOp(brpSubResults._embedded.Partners.Select(x => x.Burgerservicenummer));
+        //GET: api/IngeschrevenPersoonOuders/5
+        //[HttpGet("/api/ingeschrevenpersoon/{id}/partners")]
+        //public IEnumerable<Persoon> GetPartners(string id)
+        //{
+        //    List<Persoon> retVal;
+        //    PartnerHalCollectie brpSubResults;
 
-        return retVal;
-        }
-        */
+        //    brpSubResults = bipClient.IngeschrevenpersonenBurgerservicenummerpartnersAsync(id, null).Result;
+        //    retVal = HaalPersoonsgegevensOp(brpSubResults._embedded.Partners.Select(x => x.Burgerservicenummer));
+
+        //    return retVal;
+        //}
+
         /*
         // GET: api/IngeschrevenPersoonOuders/5
         [HttpGet("/api/ingeschrevenpersoon/{id}/medebewoners")]
@@ -134,7 +134,7 @@ namespace BevragingIngeschrevenPersonen
         return retVal;
         }
         */
-        /*
+
         //private List<Persoon> HaalPersoonsgegevensOp(IEnumerable<Bewoning> burgerservicenummers)
         //{
         //    List<Persoon> retVal = new List<Persoon>();
@@ -150,7 +150,7 @@ namespace BevragingIngeschrevenPersonen
         //    }
         //    return retVal;
         //}
-        */
+
 
         //private List<Persoon> HaalPersoonsgegevensOp(IEnumerable<string> burgerservicenummers)
         //{
@@ -168,13 +168,13 @@ namespace BevragingIngeschrevenPersonen
         //    return retVal;
         //}
 
-        /*
-        private Persoon HaalGegevensOpUitBrp(string bsn)
-        {
-        IngeschrevenPersoonHal brpPpersoon = bipClient.IngeschrevenNatuurlijkPersoonAsync(bsn, null, null, null).Result;
-        Persoon persoon = new Map_IngeschrevenPersoonHal_to_Persoon().Map(brpPpersoon);
-        return persoon;
-        }
-        */
+
+        //private Persoon HaalGegevensOpUitBrp(string bsn)
+        //{
+        //    IngeschrevenPersoonHal brpPpersoon = bipClient.IngeschrevenNatuurlijkPersoonAsync(bsn, null, null, null).Result;
+        //    Persoon persoon = new Map_IngeschrevenPersoonHal_to_Persoon().Map(brpPpersoon);
+        //    return persoon;
+        //}
+
     }
 }

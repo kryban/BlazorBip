@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BevragingIngeschrevenPersonen.Types
+namespace Bevolking.Types
 {
     public class Adres
     {

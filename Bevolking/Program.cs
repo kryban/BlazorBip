@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BevragingIngeschrevenPersonen
+namespace Bevolking
 {
     class Program
     {

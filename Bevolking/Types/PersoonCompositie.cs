@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BevragingIngeschrevenPersonen.Types
+namespace Bevolking.Types
 {
     public class PersoonCompositie
     {

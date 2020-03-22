@@ -1,7 +1,7 @@
-﻿using BevragingIngeschrevenPersonen.Enums;
+﻿using Bevolking.Enums;
 using System;
 
-namespace BevragingIngeschrevenPersonen.Types
+namespace Bevolking.Types
 {
     public class Persoon : IPersoon
     {

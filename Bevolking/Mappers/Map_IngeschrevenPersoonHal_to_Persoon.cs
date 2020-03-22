@@ -1,11 +1,11 @@
-﻿using BevragingIngeschrevenPersonen.Enums;
-using BevragingIngeschrevenPersonen.Types;
+﻿using Bevolking.Enums;
+using Bevolking.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BevragingIngeschrevenPersonen.Mappers
+namespace Bevolking.Mappers
 {
     public class Map_IngeschrevenPersoonHal_to_Persoon
     {

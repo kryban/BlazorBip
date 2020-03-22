@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BevragingIngeschrevenPersonen\BevragingIngeschrevenPersonen.csproj" />
+    <Folder Include="Data\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
+    <ProjectReference Include="..\Bevolking\Bevolking.csproj" />
   </ItemGroup>
 
 </Project>

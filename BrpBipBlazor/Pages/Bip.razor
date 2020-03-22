@@ -1,7 +1,7 @@
 ﻿@page "/bip"
 
-@using BevragingIngeschrevenPersonen.Types;
-@using BevragingIngeschrevenPersonen;
+@using Bevolking.Types;
+@using Bevolking;
 
 <h3>Zoek Persoon</h3>
 
@@ -26,7 +26,7 @@
         <BipPersoonDetail @bind-PersoonContext="ouder.SoortRelatie" @bind-Persoon="ouder.Persoon"></BipPersoonDetail>
     }
 }
-else if (persoonCompositie.Persoon != null)
+else if (persoonCompositie.Ouders != null)
 {
     var foo = "Ouder";
     var bar = new PersoonNietGevonden();
@@ -42,7 +42,7 @@ else if (persoonCompositie.Persoon != null)
         <BipPersoonDetail @bind-PersoonContext="kind.SoortRelatie" @bind-Persoon="kind.Persoon"></BipPersoonDetail>
     }
 }
-else if (persoonCompositie.Persoon != null)
+else if (persoonCompositie.Kinderen != null)
 {
     var foo = "Kind";
     var bar = new PersoonNietGevonden();
