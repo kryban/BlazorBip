@@ -1,5 +1,7 @@
 ﻿using Bevolking.Mappers;
 using Bevolking.Types;
+using Bevolking.Proxies;
+using Bevolking;
 using System;
 using System.Collections.Generic;
 using System.Text;
