@@ -10,11 +10,11 @@ namespace Bevolking
 {
     public class Bevrager
     {
-        Client bipClient;
+        BipClient bipClient;
 
         public Bevrager()
         {
-            bipClient = new Client(new System.Net.Http.HttpClient());
+            bipClient = new BipClient(new System.Net.Http.HttpClient());
         }
 
         // GET: api/BevragingIngeschrevenPersoon

@@ -15,14 +15,14 @@ namespace Bevolking.Proxies
     using System = global::System;
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.2.3.0 (NJsonSchema v10.1.5.0 (Newtonsoft.Json v11.0.0.0))")]
-    public partial class Client
+    public partial class BipClient
     {
         //private string _baseUrl = "https://virtserver.swaggerhub.com/VNGRealisatie/api/bevragingen_ingeschreven_personen";
         private string _baseUrl = "https://www.haalcentraal.nl/haalcentraal/api/brp";
         private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
 
-        public Client(System.Net.Http.HttpClient httpClient)
+        public BipClient(System.Net.Http.HttpClient httpClient)
         {
             _httpClient = httpClient;
             _httpClient.DefaultRequestHeaders.Add("x-api-key", "L9O4h7E1YjnDg9UKEgpdHUzEevl8HyRf");
